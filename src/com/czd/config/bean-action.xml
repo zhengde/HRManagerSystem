@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 将Service注入到Action-->
+    <!-- 1.员工管理模块-->
+    <bean id="employeeAction" class="com.czd.action.EmployeeAction">
+        <property name="employeeService" ref="employeeService"/>
+        <property name="deptService" ref="deptService"/>
+    </bean>
+
+    <!-- 2.管理员模块-->
+    <bean id="adminAction" class="com.czd.action.AdminAction">
+        <property name="adminService" ref="adminService"/>
+    </bean>
+
+    <!--
+        当在AdminAction使用private BaseService<AdminService> baseService;时使用
+    <bean id="adminAction" class="com.czd.action.AdminAction">
+        <property name="adminService" ref="baseService"></property>
+    </bean>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>-->
+
+
+
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+

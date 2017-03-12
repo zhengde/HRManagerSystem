@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 将SessionFactory注入Dao-->
+    <bean id="adminDao" class="com.czd.dao.Impl.AdminDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="deptDao" class="com.czd.dao.Impl.DeptDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="employeeDao" class="com.czd.dao.Impl.EmployeeDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>     
+
+
+
+
+
+
+
+
+
+

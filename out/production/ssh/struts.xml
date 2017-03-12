@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="emp" namespace="/" extends="struts-default">
+
+        <!--1.全局视图-->
+        <global-results>
+            <result name="success">/list.jsp</result>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <!--2.全局异常
+                这里的result 会去找全局视图中result对应的页面
+                即：当发生XXException时，会根据result跳转到不同的异常页面中-->
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <!-- 3.action实例交给spring创建-->
+        <action name="emp_*" class="employeeAction" method="{1}">
+            <!-- 列表展示 -->
+            <result name="list">/list.jsp</result>
+        </action>
+
+    </package>
+</struts>
