@@ -15,8 +15,9 @@ public class Employee {
     private String name;
     @Column
     private double salary;
-    @ManyToOne(targetEntity = Dept.class,cascade = {
-            CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH
+    /*Dept不要懒加载*/
+    @ManyToOne(targetEntity = Dept.class, fetch = FetchType.EAGER, cascade = {
+            CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH
     })
     private Dept dept;
 

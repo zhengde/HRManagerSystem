@@ -3,8 +3,10 @@ package com.czd.action;
 import com.czd.bean.Dept;
 import com.czd.bean.Employee;
 import com.czd.service.IBaseService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.util.ValueStack;
 import org.apache.struts2.interceptor.RequestAware;
 
 import java.util.List;
@@ -66,11 +68,16 @@ public class EmployeeAction extends ActionSupport implements RequestAware, Model
      * 进入更新员工数据页面
      */
     public String updateView() {
-        // 数据回显
         // 获取要修改员工记录的id
         int id = employee.getId();
-
-
+        Employee emp = employeeService.findById(id);
+        // 查询所有部门
+        List<Dept> deptList = deptService.getAll();
+        // 保存Employee和Dept对象
+        ValueStack vs = ActionContext.getContext().getValueStack();
+        vs.pop();   // 为什么需要出栈？
+        vs.push(emp);
+        request.put("deptList",deptList);
         return "update";
     }
 
@@ -78,16 +85,22 @@ public class EmployeeAction extends ActionSupport implements RequestAware, Model
      * 保存更新后的员工数据，并跳转到展示界面
      */
     public String update(){
-
-
+        // 根据部门id查询修改后的部门对象，之后再设置到员工属性中
+        Dept dept = deptService.findById(deptId);
+        employee.setDept(dept);
+        // 更新员工
+        employeeService.update(employee);
         return "listAction";
     }
 
     /**
      * 删除一个员工数据
      */
-
-
+    public String delete(){
+        int id = employee.getId();
+        employeeService.delete(id);
+        return "listAction";
+    }
 
     private Map<String, Object> request;
 

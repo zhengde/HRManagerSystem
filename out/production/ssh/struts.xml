@@ -32,6 +32,10 @@
             <result name="listAction" type="redirectAction">emp_list</result>
             <!--<result name="listAction" type="redirect">/list.jsp</result>-->
             <!--<result name="listAction">list.jsp</result>-->
+
+            <!-- 修改员工数据页面-->
+            <result name="update">/update.jsp</result>
+
         </action>
 
     </package>

@@ -15,7 +15,7 @@
 <%-- s:a href="emp_addView"表示点击该链接后，会执行当前(在该jsp中)Action的addView()方法(此时Action为EmployeeAction)
     那前面为什么会有emp_呢？
     因为在struts.xml中--%>
-<div align="center" style="width: 80%"><s:a href="emp_addView">添加</s:a></div>
+<div align="center" style="width:80%"><s:a href="emp_addView">添加</s:a></div>
 <table border="1" align="center" width="60%" cellpadding="5" cellspacing="0">
     <tr>
         <th>序号</th>
@@ -47,7 +47,9 @@
                 <td><s:property value="#emp.name"/></td>
                 <td><s:property value="#emp.salary"/></td>
                 <td>
-                    <s:a href="www.baidu.com">修改</s:a>  <s:a href="">删除</s:a>
+                    <%-- 有多一个空格% {#emp.id}--%>
+                    <s:a href="emp_updateView?id=%{#emp.id}">修改</s:a>
+                    <s:a href="emp_delete?id=%{#emp.id}">删除</s:a>
                 </td>
             </tr>
         </s:iterator>

@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Administrator on 2017/2/25.
  * 所有dao的通用操作，希望所有的dao都继承此类
  */
-public class BaseDao<T> implements IBaseDao<T>{
+public class BaseDao<T> implements IBaseDao<T> {
 
     // 当前操作的实际bean类型
     private Class<T> clazz;
@@ -52,7 +52,7 @@ public class BaseDao<T> implements IBaseDao<T>{
     @Override
     public void delete(int id) {
         sessionFactory.getCurrentSession()
-                .createQuery("delete from " + className + "where id=?")
+                .createQuery("delete from " + className +" where id=?")
                 .setParameter(0, id).executeUpdate();
     }
 
