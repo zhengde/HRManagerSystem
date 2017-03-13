@@ -11,7 +11,7 @@
     <title>登录页面</title>
 </head>
 <body>
-<%--看视频跟着做！！！--%>
+
 <form action="list.jsp">
 账号:
 密码:

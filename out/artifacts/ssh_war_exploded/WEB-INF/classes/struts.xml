@@ -22,8 +22,16 @@
 
         <!-- 3.action实例交给spring创建-->
         <action name="emp_*" class="employeeAction" method="{1}">
-            <!-- 列表展示 -->
+            <!-- 员工数据展示页面 -->
             <result name="list">/list.jsp</result>
+
+            <!-- 添加员工数据页面-->
+            <result name="add">/add.jsp</result>
+            <!-- 添加员工数据成功后，进入员工数据展示页面（防止刷新就会多一条记录的问题，所以采用重定向）
+                所有功能完成后再来测试一次-->
+            <result name="listAction" type="redirectAction">emp_list</result>
+            <!--<result name="listAction" type="redirect">/list.jsp</result>-->
+            <!--<result name="listAction">list.jsp</result>-->
         </action>
 
     </package>
