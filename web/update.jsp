@@ -15,19 +15,19 @@
 <%-- 信息录入点击提交之后,跳转到update方法--%>
 <s:form action="emp_update" method="post" theme="simple">
     <%--修改操作需要隐藏域保存主键值--%>
-    <s:hidden name="id" id="id" value="%{id}"></s:hidden>
+    <s:hidden name="employee.id" id="id" value="%{id}"></s:hidden>
     <table align="center" cellpadding="5" cellspacing="0" border="1" width="40%">
         <tr>
             <td>员工姓名</td>
             <td>
                 <%--name是Employee类中定义的属性名--%>
-                <s:textfield id="name" name="name"></s:textfield>
+                <s:textfield id="name" name="employee.name"></s:textfield>
             </td>
         </tr>
         <tr>
             <td>员工薪水</td>
             <td>
-                <s:textfield id="salary" name="salary"></s:textfield>
+                <s:textfield id="salary" name="employee.salary"></s:textfield>
             </td>
         </tr>
         <tr>

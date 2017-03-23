@@ -34,7 +34,6 @@ public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
                 // 登录成功
                 ActionContext.getContext().getSession().put("adminInfo", adminInfo);
                 return LOGIN;
-
         }
     }
 

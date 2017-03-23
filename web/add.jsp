@@ -19,13 +19,13 @@
             <td>员工姓名</td>
             <td>
                     <%--name是Employee类中定义的属性名--%>
-                <s:textfield id="name" name="name" value="" ></s:textfield>
+                <s:textfield id="name" name="employee.name" value="" ></s:textfield>
             </td>
         </tr>
         <tr>
             <td>员工薪水</td>
             <td>
-                <s:textfield id="salary" name="salary" value=""></s:textfield>
+                <s:textfield id="salary" name="employee.salary" value=""></s:textfield>
             </td>
         </tr>
         <tr>
