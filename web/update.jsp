@@ -20,7 +20,7 @@
         <tr>
             <td>员工姓名</td>
             <td>
-                    <%--name是Employee类中定义的属性名--%>
+                <%--name是Employee类中定义的属性名--%>
                 <s:textfield id="name" name="name"></s:textfield>
             </td>
         </tr>

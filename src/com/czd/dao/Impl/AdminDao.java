@@ -11,6 +11,7 @@ public class AdminDao extends BaseDao<Admin> implements IAdminDao {
 
     @Override
     public Admin findByAdmin(Admin admin) {
+        System.out.println("findByAdmin");
         return (Admin) getSessionFactory().getCurrentSession()
                 .createQuery("select a from Admin a where a.name=? and a.password=?")
                 .setParameter(0, admin.getName())

@@ -16,7 +16,8 @@
     那前面为什么会有emp_呢？
     因为在struts.xml中已写明 <action name="emp_*"，当匹配到emp_后，
     就会进入class="employeeAction"所指定的employeeAction类中找有没有对应的addView，有的便执行--%>
-<div align="center" style="width:80%"><s:a href="emp_addView">添加</s:a></div>
+<div align="center" style="width:80%">
+    <s:a href="emp_addView">添加员工</s:a></div>
 <table border="1" align="center" width="60%" cellpadding="5" cellspacing="0">
     <tr>
         <th>序号</th>

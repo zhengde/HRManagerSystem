@@ -13,6 +13,9 @@ public class AdminService extends BaseService<AdminService> implements IAdminSer
 
     @Override
     public Admin findByAdmin(Admin admin) {
+        int id = admin.getId();
+        System.out.println(id);
+
         return adminDao.findByAdmin(admin);
     }
 

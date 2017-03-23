@@ -70,14 +70,16 @@ public class EmployeeAction extends ActionSupport implements RequestAware, Model
     public String updateView() {
         // 获取要修改员工记录的id
         int id = employee.getId();
-        Employee emp = employeeService.findById(id);
+        Employee emp = employeeService.findById(id);// 关闭懒加载，有dept值，所以deptId有值
         // 查询所有部门
         List<Dept> deptList = deptService.getAll();
         // 保存Employee和Dept对象
         ValueStack vs = ActionContext.getContext().getValueStack();
-        vs.pop();   // 为什么需要出栈？
+        vs.pop();
         vs.push(emp);
+
         request.put("deptList",deptList);
+
         return "update";
     }
 

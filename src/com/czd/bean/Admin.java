@@ -1,9 +1,6 @@
 package com.czd.bean;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Administrator on 2017/2/24.
@@ -12,10 +9,13 @@ import javax.persistence.Table;
 @Table
 public class Admin {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
     private String name;
 
+    @Column
+    private String password;
     public String getPassword() {
         return password;
     }
@@ -39,8 +39,6 @@ public class Admin {
     public void setName(String name) {
         this.name = name;
     }
-    @Column
-    private String password;
 
 
 }

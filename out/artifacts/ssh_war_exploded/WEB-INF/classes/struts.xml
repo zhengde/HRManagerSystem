@@ -20,7 +20,7 @@
             <exception-mapping exception="java.lang.Exception" result="error"/>
         </global-exception-mappings>
 
-        <!-- 3.action实例交给spring创建-->
+        <!-- 3.员工Action -->
         <action name="emp_*" class="employeeAction" method="{1}">
             <!-- 员工数据展示页面 -->
             <result name="list">/list.jsp</result>
@@ -35,6 +35,15 @@
 
             <!-- 修改员工数据页面-->
             <result name="update">/update.jsp</result>
+        </action>
+
+        <!-- 管理员Action -->
+        <action name="admin_*" class="adminAction" method="{1}">
+            <!-- 登录成功-->
+            <result name="login">/list.jsp</result>
+
+            <!-- 登录失败-->
+            <result name="loginFailed">/login.jsp</result>
 
         </action>
 
