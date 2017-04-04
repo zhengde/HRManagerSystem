@@ -7,15 +7,13 @@ import com.czd.service.IAdminService;
 /**
  * Created by czd on 2017/2/25.
  */
-public class AdminService extends BaseService<AdminService> implements IAdminService{
+public class AdminService extends BaseService<Admin> implements IAdminService {
 
-    private AdminDao adminDao = (AdminDao) getBaseDao();
+    private AdminDao adminDao;
 
     @Override
     public Admin findByAdmin(Admin admin) {
-        int id = admin.getId();
-        System.out.println(id);
-
+        adminDao = (AdminDao) getBaseDao();
         return adminDao.findByAdmin(admin);
     }
 

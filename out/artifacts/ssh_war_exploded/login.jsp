@@ -16,11 +16,11 @@
     <table align="center" width="60%" cellspacing="0" cellpadding="5" border="1">
         <tr>
             <td>账号</td>
-            <td><s:textfield name="name" value=""></s:textfield></td>
+            <td><s:textfield name="admin.name" value=""></s:textfield></td>
         </tr>
         <tr>
             <td>密码</td>
-            <td><s:textfield name="password" value="" type="password"></s:textfield></td>
+            <td><s:textfield name="admin.password" value="" type="password"></s:textfield></td>
         </tr>
         <tr>
             <td colspan="2"><s:submit value="登录"></s:submit></td>

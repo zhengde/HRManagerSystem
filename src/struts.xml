@@ -40,7 +40,7 @@
         <!-- 管理员Action -->
         <action name="admin_*" class="adminAction" method="{1}">
             <!-- 登录成功-->
-            <result name="login">/list.jsp</result>
+            <result name="login" type="redirectAction">emp_list</result>
 
             <!-- 登录失败-->
             <result name="loginFailed">/login.jsp</result>
@@ -49,3 +49,4 @@
 
     </package>
 </struts>
+

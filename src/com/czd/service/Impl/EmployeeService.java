@@ -13,6 +13,7 @@ import java.util.List;
 public class EmployeeService extends BaseService<EmployeeService> implements IEmployeeService{
 
     private EmployeeDao employeeDao = (EmployeeDao) getBaseDao();
+
     @Override
     public List<Employee> getAll(String empName) {
         return employeeDao.getAll(empName);

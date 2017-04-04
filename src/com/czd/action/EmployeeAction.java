@@ -36,7 +36,6 @@ public class EmployeeAction extends ActionSupport implements RequestAware, Model
         // 查询所有员工
         List<Employee> listEmp = employeeService.getAll();
         // 将所有员工数据保存到request中
-//        Map<String, Object> request = (Map<String, Object>) ActionContext.getContext().get("request");
         request.put("listEmp", listEmp);
         return "list";
     }
@@ -149,8 +148,6 @@ public class EmployeeAction extends ActionSupport implements RequestAware, Model
 
     /**
      * 返回实例化后的对象
-     *
-     * @return
      */
     @Override
     public Employee getModel() {

@@ -15,6 +15,7 @@ public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
 
     private IAdminService adminService;
 
+
     // 封装请求数据,一定要new
     private Admin admin = new Admin();
 
@@ -25,7 +26,6 @@ public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
      */
     public String login() throws Exception {
         Admin adminInfo = adminService.findByAdmin(admin);//admind的id为null，findByAdmin没有执行
-        System.out.println("==============");//
             // 验证
             if (adminInfo == null) {
                 // 登录失败

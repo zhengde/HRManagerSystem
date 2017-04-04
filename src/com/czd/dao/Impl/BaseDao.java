@@ -21,15 +21,10 @@ public class BaseDao<T> implements IBaseDao<T> {
 
     // 反射泛型
     public BaseDao() {
-        //getClass()-->包名.EmployeeDao   getGenericSuperclass-->包名.BaseDao<EmployeeDao>
         Type type = this.getClass().getGenericSuperclass();
-        // 转换为参数化类型,如： 包名.BaseDao<EmployeeDao>
         ParameterizedType pt = (ParameterizedType) type;
-        // [Ljava.lang.reflect.Type;@443b7951
         Type types[] = pt.getActualTypeArguments();
-        // 获取实际类型，如：包名.EmployeeDao
         clazz = (Class<T>) types[0];
-        // EmployeeDao
         className = clazz.getSimpleName();
     }
 
