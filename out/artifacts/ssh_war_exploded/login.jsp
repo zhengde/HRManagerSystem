@@ -13,7 +13,7 @@
 </head>
 <body>
 <s:form method="POST" action="admin_login" theme="simple">
-    <table align="center" width="60%" cellspacing="0" cellpadding="5" border="1">
+    <table align="center" width="40%" cellspacing="0" cellpadding="5" border="1">
         <tr>
             <td>账号</td>
             <td><s:textfield name="admin.name" value=""></s:textfield></td>

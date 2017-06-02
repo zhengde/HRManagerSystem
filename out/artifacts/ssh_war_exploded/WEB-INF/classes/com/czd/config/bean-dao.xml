@@ -6,7 +6,7 @@
 
     <!-- 将SessionFactory注入Dao-->
     <bean id="adminDao" class="com.czd.dao.Impl.AdminDao">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <bean id="deptDao" class="com.czd.dao.Impl.DeptDao">
@@ -18,13 +18,4 @@
     </bean>
 
 </beans>     
-
-
-
-
-
-
-
-
-
 
