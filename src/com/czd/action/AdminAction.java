@@ -25,7 +25,7 @@ public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
      * @throws Exception
      */
     public String login() throws Exception {
-        Admin adminInfo = adminService.findByAdmin(admin); //admind的id为null，findByAdmin没有执行
+        Admin adminInfo = adminService.findByAdmin(admin); 
         // 验证
         if (adminInfo == null) {
             // 登录失败
