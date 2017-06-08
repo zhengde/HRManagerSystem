@@ -15,10 +15,8 @@ public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
 
     private IAdminService adminService;
 
-
     // 封装请求数据,一定要new
     private Admin admin = new Admin();
-
 
     /**
      * @return 登录验证
