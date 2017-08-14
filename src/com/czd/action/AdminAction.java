@@ -1,8 +1,8 @@
 package com.czd.action;
 
 import com.czd.bean.Admin;
-import com.czd.service.IBaseService;
-import com.czd.service.Impl.AdminService;
+import com.czd.service.IAdminService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -12,24 +12,29 @@ import com.opensymphony.xwork2.ModelDriven;
  */
 
 public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
-    /**
-     * ======================================
-     * 程序可以运行时再 试错！！！！！！在bean-action.xml配置也要改
-     * ======================================
-     */
-//    private BaseService<AdminService> aaseService;
 
-    private IBaseService<AdminService> adminService;
+    private IAdminService adminService;
+
+
     // 封装请求数据,一定要new
     private Admin admin = new Admin();
 
 
     /**
-     * @return 跳转到login页面
+     * @return 登录验证
      * @throws Exception
      */
     public String login() throws Exception {
-        return LOGIN;
+        Admin adminInfo = adminService.findByAdmin(admin); //admind的id为null，findByAdmin没有执行
+        // 验证
+        if (adminInfo == null) {
+            // 登录失败
+            return "loginFailed";
+        } else {
+            // 登录成功
+            ActionContext.getContext().getSession().put("adminInfo", adminInfo);
+            return LOGIN;
+        }
     }
 
     @Override
@@ -45,7 +50,11 @@ public class AdminAction extends ActionSupport implements ModelDriven<Admin> {
         this.admin = admin;
     }
 
-    public void setAdminService(IBaseService<AdminService> adminService) {
+    public IAdminService getAdminService() {
+        return adminService;
+    }
+
+    public void setAdminService(IAdminService adminService) {
         this.adminService = adminService;
     }
 }
