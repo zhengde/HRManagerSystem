@@ -16,8 +16,8 @@
         <property name="password" value="335588"/>
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hr"/>
-        <property name="initialPoolSize" value="3"/>
-        <property name="maxPoolSize" value="6"/>
+        <!--<property name="initialPoolSize" value="3"/>-->
+        <!--<property name="maxPoolSize" value="6"/>-->
     </bean>
 
     <!--2.spring管理SessionFactory 【所有Hibernate配置都写在spring中】-->
@@ -31,6 +31,15 @@
                 <prop key="hbm2ddl.auto">update</prop>
             </props>
         </property>
+        <!--
+        1.可以
+        <property name="packagesToScan" value="com.czd.bean.**"/>
+
+        2.可以
+        <property name="packagesToScan" value="com.czd.bean"/>
+
+        3.可以
+        -->
         <property name="annotatedClasses">
             <list>
                 <value>com.czd.bean.Employee</value>
